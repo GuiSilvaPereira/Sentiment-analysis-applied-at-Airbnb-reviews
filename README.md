@@ -2,31 +2,125 @@
 
 **1 Introduction**
 
-Natural language processing (NLP) is a theory-motivated range of computational techniques for the automatic analysis and representa-tion of human language.” Cambria (2014).
-In other words, NLP is a way that machines and computers under-stand our language. In this context, the project will explore a case study about Text Mining which nowadays is a very powerful technique to evaluate large collections of documents and discover new infor-mation and answer questions. Considering the amount of information present on the World Wide Web. However, the most of this text data is produced for human consumption, leading to unstructured data which requires pre-processing techniques to make the data understandable to the machines.
-In the scope of this project, sentiment analysis was done, which it is the process used to determine the emotional tone for of a piece of text. This analysis It is an important tool for businesses in order to understand customer feedback, social media sentiment, and brand reputation due to their sentiment analysis has several diverse applications in the real world.
-Intended to make this the sentiment analysis, we used the NLTK (Natural Language Toolkit) for that. It consists of a package from Python which provides a wide range of libraries for text analysis, furthermore, it is widely used, well-documented and has a large community of users and contributors. NLTK includes pre-trained models for sentiment analysis, which was used to classify the sentiment of Airbnb reviews (a piece of text) as positive, negative, or neutral.
-The data used was collected from insideairbnb.com which is a project that provides data about Airbnb services along the world. Within the data available on the site, we chose to analyze the data concerning the guest reviews and the data about the accommodation’s characteristics.
-The goal of this project is to demonstrate with real data the challenges of transforming a business problem into a data problem, through a huge quantity of data available from guest reviews for Airbnb accommodations at the Boston City between 2015 and 2023.
-Leading to how text mining and sentiment analysis can be used to extract insights from a large volume of unstructured data, and how it can help businesses make data-driven decisions that improve customer satisfaction.
+    Natural language processing (NLP) is a theory-motivated range of computational techniques for the automatic analysis and representa-tion of human language.” Cambria (2014).
+    In other words, NLP is a way that machines and computers under-stand our language. In this context, the project will explore a case study about Text Mining which nowadays is a very powerful technique to evaluate large collections of documents and discover new infor-mation and answer questions. Considering the amount of information present on the World Wide Web. However, the most of this text data is produced for human consumption, leading to unstructured data which requires pre-processing techniques to make the data understandable to the machines.
+    In the scope of this project, sentiment analysis was done, which it is the process used to determine the emotional tone for of a piece of text. This analysis It is an important tool for businesses in order to understand customer feedback, social media sentiment, and brand reputation due to their sentiment analysis has several diverse applications in the real world.
+    Intended to make this the sentiment analysis, we used the NLTK (Natural Language Toolkit) for that. It consists of a package from Python which provides a wide range of libraries for text analysis, furthermore, it is widely used, well-documented and has a large community of users and contributors. NLTK includes pre-trained models for sentiment analysis, which was used to classify the sentiment of Airbnb reviews (a piece of text) as positive, negative, or neutral.
+    The data used was collected from insideairbnb.com which is a project that provides data about Airbnb services along the world. Within the data available on the site, we chose to analyze the data concerning the guest reviews and the data about the accommodation’s characteristics.
+    The goal of this project is to demonstrate with real data the challenges of transforming a business problem into a data problem, through a huge quantity of data available from guest reviews for Airbnb accommodations at the Boston City between 2015 and 2023.
+    Leading to how text mining and sentiment analysis can be used to extract insights from a large volume of unstructured data, and how it can help businesses make data-driven decisions that improve customer satisfaction.
 
 **2 Background and problem description**
 
-The tourism industry has always been heavily connected to customer satisfaction. With the rise of online platforms such as Airbnb, the volume of guest reviews has increased exponentially. Considering that manually analyzing this vast amount of data can be time-consum-ing and error prone, there is a growing need for automated tools and techniques that allow the extraction of valuable insights from this data.
-Sentiment analysis is a powerful tool for analyzing customer feed-back and sentiment in the tourism industry, using NLP and machine learning techniques, sentiment analysis can automatically classify guest reviews as positive, negative, or neutral, and extract valuable in-sights into customer satisfaction and preferences. We will then use the insights gained from the sentiment analysis to identify trends, patterns, and opportunities, which can be valuable for improving customer sat-isfaction.
+    The tourism industry has always been heavily connected to customer satisfaction. With the rise of online platforms such as Airbnb, the volume of guest reviews has increased exponentially. Considering that manually analyzing this vast amount of data can be time-consum-ing and error prone, there is a growing need for automated tools and techniques that allow the extraction of valuable insights from this data.
+    Sentiment analysis is a powerful tool for analyzing customer feed-back and sentiment in the tourism industry, using NLP and machine learning techniques, sentiment analysis can automatically classify guest reviews as positive, negative, or neutral, and extract valuable in-sights into customer satisfaction and preferences. We will then use the insights gained from the sentiment analysis to identify trends, patterns, and opportunities, which can be valuable for improving customer sat-isfaction.
 
 **2.1 Data pre-processing**
 
-Firstly, we started by deleting any unnecessary columns from both datasets, the review dataset and the listings dataset. We also decided that we should consider only reviews with the length higher than 30 characters because for the sentiment analysis longer reviews are more useful than shorter ones.
+    Firstly, we started by deleting any unnecessary columns from both datasets, the review dataset and the listings dataset. We also decided that we should consider only reviews with the length higher than 30 characters because for the sentiment analysis longer reviews are more useful than shorter ones.
 Considering that the data is real and there are reviews from several languages, in order to simplify the computational effort and reduce the noise in data, we decided to consider only reviews in English. The function langdetect from detect package was used to detect the lan-guage from each review. Firstly, the DataFrame available at http://insideairbnb.com/ has 162.916 rows and after dropping the unused rows the DataFrame has 144.969 rows, which is a huge number of reviews to analyze.
-We used the NLTK library to manipulate the data in order to tokenize, remove the stop words and count the frequency of each word on each review, with the functions word_tokenize, FreqDist, stop-words. Finished the Data pre-processing, we perform the sentiment analysis using the nltk.sentiment.vader.SentimentIntensityAnalyzer, it is a pre-trained model for sentiment analysis in English text being part of the VADER (Valence Aware Dictionary and sentiment Reasoner) module from NLTK library.
-The VADER Sentiment Analyzer is designed for sentiment analysis in social media context, where traditional sentiment analysis models may struggle because of the informal language used. VADER is trained on a vast amount of social media data and uses a combination of lexical and grammatical heuristics to estimate the sentiment intensity of a given text. (Keita,2022)
-For the following analysis, we consider the compound score given by polarity_scores() method, which represents an aggregated senti-ment intensity ranging from -1 (extremely negative) to 1 (extremely positive). To have a better view of the result, a histogram and a boxplot were made. 
+    We used the NLTK library to manipulate the data in order to tokenize, remove the stop words and count the frequency of each word on each review, with the functions word_tokenize, FreqDist, stop-words. Finished the Data pre-processing, we perform the sentiment analysis using the nltk.sentiment.vader.SentimentIntensityAnalyzer, it is a pre-trained model for sentiment analysis in English text being part of the VADER (Valence Aware Dictionary and sentiment Reasoner) module from NLTK library.
+    The VADER Sentiment Analyzer is designed for sentiment analysis in social media context, where traditional sentiment analysis models may struggle because of the informal language used. VADER is trained on a vast amount of social media data and uses a combination of lexical and grammatical heuristics to estimate the sentiment intensity of a given text. (Keita,2022)
+    For the following analysis, we consider the compound score given by polarity_scores() method, which represents an aggregated senti-ment intensity ranging from -1 (extremely negative) to 1 (extremely positive). To have a better view of the result, a histogram and a boxplot were made. 
     
     ![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/5e69c274-e526-474e-8c09-a870c3f127f8)
     ![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/bfeb3d9d-cbd4-4452-bfdc-06676cde501c)
 
-The figures showed that the mean of the compound from we can see that from the reviews tend to be positive, which is good information for Airbnb, but it creates some difficulties in our analysis, more specifically how can we detect the similar sentiment scores once it has a very low variance and tends to be very positive. To avoid this similarity between the "compound" of the reviews, we decided to discretize the “compound” value, creating a new column named “sentiment_class” using the qcut function from Pandas library. The function computes the quantiles based on the distribution of the data, then splits the data in the number of bins defined where each bin will have approximately the same number of observations.The distribution after implementation, can be seen in next figure.
+    The figures showed that the mean of the compound from we can see that from the reviews tend to be positive, which is good information for Airbnb, but it creates some difficulties in our analysis, more specifically how can we detect the similar sentiment scores once it has a very low variance and tends to be very positive. To avoid this similarity between the "compound" of the reviews, we decided to discretize the “compound” value, creating a new column named “sentiment_class” using the qcut function from Pandas library. The function computes the quantiles based on the distribution of the data, then splits the data in the number of bins defined where each bin will have approximately the same number of observations.The distribution after implementation, can be seen in next figure.
     
     ![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/2e032d19-ada5-476e-ab05-29a5bd51356c)
 
+**3 Result and Discussion**
+
+    In this section, the sentimental analyses made in previously will be the based for further analysis in order to estimate cause and effect analysis.
+    
+**3.1 Grouped analysis**
+
+**I. Neighbourhood**
+
+    From the sentimental analysis, the mean of the compound taken for each announcement was correlated with other information provided from the dataset. The next table includes the top 6 neighborhoods in Boston with the best sentiment analysis results, as there are 25 different neighborhoods.
+
+![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/47bf2396-fb7e-47db-b7cc-7e60ba53bdbe)
+
+a. Review Scores:
+
+    The table displays the average review scores for different aspects such as rating (general), location, and value, this data is available on http://insideairbnb.com/. The review scores range from 4.36 to 4.95, indicating generally positive feedback.
+    We can see that the top 2 neighborhoods, Longwood Medical Area and Leather District, have considerably lower numbers of reviews and listings so it is necessary to be careful to conclude that these neighborhoods are really the best in Boston. However, comparing the top 6 by the sentiment analysis and the top 6 by Airbnb data, the results are near, with only one change: West Roxbury does not appear, giving the place to North End which has the best location score (excluding the Leather District).
+
+b. Superhost (%):
+
+    Indicates the percentage of listings that have a superhost on each neighborhood, the relation of this column with the sentiment analysis was not very clear on the table, but we can see the trend that neighbor-hoods with lower than 30% of its listings with a superhost are on the lower positions.
+
+c. Sentiment Analysis:
+
+    The sentiment analysis column represents the mean of the sentiment score (compound), the range from 0.71 to 0.91, indicating a generally positive sentiment. This column was used to sort the table and show the top 6 neighborhoods.
+    The table also displays the sentiment class mode and median for each neighborhood, which are important central metrics to understand the distribution of the sentiment analysis at each neighborhood. Looking at the median that is always higher or equal to the class 4, these 6 neighborhoods have the reviews sentiment above the average.
+    
+d. Price:
+
+    The table displays the average price of listings in each neighbor-hood, the range from $104 to $283. We can see the high variance of mean price in both, the best and the worst, showing that different customers have different preferences considering the relation between neighborhood and price. The same lack of pattern can be seen at the price class mode and median.
+    
+e. Room type mode:
+
+    This column represents the most frequent room type in each neighborhood, along the table it includes only "Entire home/apt" and "Private room".
+
+**II. Room type:**
+
+    The next table aims to correlate the room type with the sentimental score (amount) with other scores presented in the dataset intended to highlight the relationship between them.
+
+![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/9e5bbe55-cb2e-478e-97a7-6ecb35d695b0)
+
+a.	Review Scores:
+
+    The table displays the average review scores for different aspects such as rating, location, and value, this data is available on http://insideairbnb.com/. Again, the result is satisfactory since the sentiment analysis by room type presents the same order as the rating scores given by the guests and provided by airbnb.
+    The location score has the highest difference between the different room types, that the “Hotel rooms” and the "Entire home/apt" have considerably higher values than the other types.
+
+b.	Superhost Percentage:
+
+    The "Hotel room" type has a higher proportion of superhosts compared to other room types.
+
+c.	Sentiment Analysis:
+
+    The sentiment analysis score is highest for the "Entire home/apt" room type (0.79), followed very closely by "Private room" (0.78), then the "Hotel room" (0.75), and "Shared room" (0.66). The mode of the sentiment class is 4 for "Entire home/apt," 1 for "Private room" and "Shared room," and 2 for "Hotel room." The median of the sentiment class is 3 for "Entire home/apt" and "Private room," and 2 for "Hotel room" and "Shared room."
+    This indicates that listings categorized as "Entire home/apt" and "Private room" generally have more positive sentiment compared to "Hotel room" and "Shared room".
+
+d.	Price:
+
+    The average price is highest for the "Hotel room" type ($390), followed by "Entire home/apt" ($230), "Private room" ($104), and "Shared room" ($62). The mode and median price classes are generally higher for the "Hotel room" type compared to other room types. This indicates that listings categorized as "Hotel room" generally are more expensive than other room types.
+
+**III.	Price class:**
+
+    The table shows different price classes (3, 1, 0, 4, 2) and their corresponding attributes. This variable “price_class” was created by us, using the qbin function from the pandas package, just like the “sentiment_class” presented before.
+
+![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/fe0013b6-5038-4530-94a8-3860d3beab89)
+
+a.	Review Scores:
+
+    The table displays the average review scores for different aspects such as rating, location, and value, this data is available on http://insideairbnb.com/. One more time the result is satisfactory since the sentiment analysis by each price class presents almost the same order as the rating scores given by the guests and provided by airbnb.
+
+b.	Superhost Percentage
+
+    The sentiment analysis score does not show a clear correlation with the superhost percentage in this table. The superhost percentage remains relatively consistent across both sentiment analysis scores and price classes.
+
+c.	Sentiment analysis: 
+
+    This column indicates the sentiment class based on the sentiment analysis score. The sentiment classes range from 1 to 5, with higher values representing more positive sentiment. The sentiment class median in this table is constant (3) and the compound value is very similar between different price classes, it doesn't provide much variation for comparison. Leading us to conclude that there are happy customers in all of the price classes.
+
+d.	Room type
+
+    This column indicates the type of room most seen by each sentiment class, all classes "Entire home/apt" or "Private room".
+
+
+**3.2	Correlation analysis**
+
+	The correlation Analysis as a statistical technique which allows to determine the strength and the direction of the relationship be-tween two variables, taking us to the relationship identification between the accommodation average sentiment analysis as compound_listings and other characteristics of the accommodations such as the number of reviews, the quantity of beds and bedrooms and the price, among others.
+    The correlation coefficient ranges from -1 to 1, where 1 indicates a perfect positive correlation, -1 indicates a perfect negative correla-tion, and 0 indicates no correlation.It is important to note that correlation does not imply causation, but it provides a measure of the linear association between variables
+    An important characteristic for the correlation analysis is the data validation, for instance if our sentiment analysis is correct, each listing compound average should have a very high positive correlation with the different review scores for each accommodation available from Airbnb. Indeed, it validates our analysis once the “compound_listings” more related variables are: 'review_scores_rating', review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin', 'review_scores_communication', 'review_scores_location' and ‘'review_scores_value'.
+
+ ![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/c395f8d1-a1bb-4dea-95b3-729ab53096ab)
+
+    Correlation analysis also provides useful quantitative information for decision-making. It assists in identifying factors that should be considered when making decisions, for instance, deciding some characteristics when investing in an accommodation to rent at Airbnb.
+    Number of Reviews (0.174184): There is a positive correlation be-tween "compound_listing" and the number of reviews. It suggests accommodations with a greater number of reviews tend to have higher sentiment analysis scores.
+    Beds (0.069833), Accommodates (0.063582), Price (0.058203) and Bedrooms (0.046954): These variables show weak positive correlations with "compound_listing." It implies that there may be a slight tendency for accommodations with more beds, which accommodate more guests, also higher prices and more bedrooms, tend to have better sentiment analysis scores.
+    Calculated Host Listings Count (-0.381577): This variable exhibit moderate negative correlations with "compound_listing." It suggests that accommodations with higher sentiment analysis scores tend to have a lower number of host listings. In other words, hosts with a lot of listings at Airbnb tend to have a lower score.
+    Availability 365 (-0.246193) and Availability 90 (-0.281227): There is a moderate negative correlation with “compound_listing”. It makes sense, as the best accommodation has less availability once the demand for the best listings is higher than the worst ones.
