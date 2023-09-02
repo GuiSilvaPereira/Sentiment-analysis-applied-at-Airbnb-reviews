@@ -27,9 +27,9 @@
     The VADER Sentiment Analyzer is designed for sentiment analysis in social media context, where traditional sentiment analysis models may struggle because of the informal language used. VADER is trained on a vast amount of social media data and uses a combination of lexical and grammatical heuristics to estimate the sentiment intensity of a given text. (Keita,2022)
     For the following analysis, we consider the compound score given by polarity_scores() method, which represents an aggregated senti-ment intensity ranging from -1 (extremely negative) to 1 (extremely positive). To have a better view of the result, a histogram and a boxplot were made. </p>
   </body>
-        <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-production-user-asset-6210df.s3.amazonaws.com/133000426/237076539-5e69c274-e526-474e-8c09-a870c3f127f8.png"></picture>
+        <picture><source media="(prefers-color-scheme: dark)" src="https://github-production-user-asset-6210df.s3.amazonaws.com/133000426/237076539-5e69c274-e526-474e-8c09-a870c3f127f8.png"></picture>
     
-       (https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/5e69c274-e526-474e-8c09-a870c3f127f8)
+       !(https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/5e69c274-e526-474e-8c09-a870c3f127f8)
         <picture>![image](https://github.com/GuiSilvaPereira/Sentiment-analysis-applied-at-Airbnb-reviews/assets/133000426/bfeb3d9d-cbd4-4452-bfdc-06676cde501c)</picture>
   <body>
     <p>The figures showed that the mean of the compound from we can see that from the reviews tend to be positive, which is good information for Airbnb, but it creates some difficulties in our analysis, more specifically how can we detect the similar sentiment scores once it has a very low variance and tends to be very positive. To avoid this similarity between the "compound" of the reviews, we decided to discretize the “compound” value, creating a new column named “sentiment_class” using the qcut function from Pandas library. The function computes the quantiles based on the distribution of the data, then splits the data in the number of bins defined where each bin will have approximately the same number of observations.The distribution after implementation, can be seen in next figure.</p>
