@@ -5,7 +5,7 @@
   </head>
   <body>
     <strong>**1 Introduction**</strong>
-
+    
     <p>Natural language processing (NLP) is a theory-motivated range of computational techniques for the automatic analysis and representa-tion of human language.” Cambria (2014).
     In other words, NLP is a way that machines and computers under-stand our language. In this context, the project will explore a case study about Text Mining which nowadays is a very powerful technique to evaluate large collections of documents and discover new infor-mation and answer questions. Considering the amount of information present on the World Wide Web. However, the most of this text data is produced for human consumption, leading to unstructured data which requires pre-processing techniques to make the data understandable to the machines.
     In the scope of this project, sentiment analysis was done, which it is the process used to determine the emotional tone for of a piece of text. This analysis It is an important tool for businesses in order to understand customer feedback, social media sentiment, and brand reputation due to their sentiment analysis has several diverse applications in the real world.
@@ -24,7 +24,8 @@
 
     <p>Firstly, we started by deleting any unnecessary columns from both datasets, the review dataset and the listings dataset. We also decided that we should consider only reviews with the length higher than 30 characters because for the sentiment analysis longer reviews are more useful than shorter ones.
     Considering that the data is real and there are reviews from several languages, in order to simplify the computational effort and reduce the noise in data, we decided to consider only reviews in English. The function langdetect from detect package was used to detect the lan-guage from each review. Firstly, the DataFrame available at http://insideairbnb.com/ has 162.916 rows and after dropping the unused rows the DataFrame has 144.969 rows, which is a huge number of reviews to analyze.
-    We used the NLTK library to manipulate the data in order to tokenize, remove the stop words and count the frequency of each word on each review, with the functions word_tokenize, FreqDist, stop-words. Finished the Data pre-processing, we perform the sentiment analysis using the nltk.sentiment.vader.SentimentIntensityAnalyzer, it is a pre-trained model for sentiment analysis in English text being part of the VADER (Valence Aware Dictionary and sentiment Reasoner) module from NLTK library.
+    We used the NLTK library to manipulate the data in order to tokenize, remove the stop words and count the frequency of each word on each review, with the functions word_tokenize, FreqDist, stop-words. </p>
+      <p>Finished the Data pre-processing, we perform the sentiment analysis using the nltk.sentiment.vader.SentimentIntensityAnalyzer, it is a pre-trained model for sentiment analysis in English text being part of the VADER (Valence Aware Dictionary and sentiment Reasoner) module from NLTK library.
     The VADER Sentiment Analyzer is designed for sentiment analysis in social media context, where traditional sentiment analysis models may struggle because of the informal language used. VADER is trained on a vast amount of social media data and uses a combination of lexical and grammatical heuristics to estimate the sentiment intensity of a given text. (Keita,2022)
     For the following analysis, we consider the compound score given by polarity_scores() method, which represents an aggregated senti-ment intensity ranging from -1 (extremely negative) to 1 (extremely positive). To have a better view of the result, a histogram and a boxplot were made. </p>
   </body>
