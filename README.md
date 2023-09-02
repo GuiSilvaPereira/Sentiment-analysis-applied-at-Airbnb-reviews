@@ -16,3 +16,9 @@ Leading to how text mining and sentiment analysis can be used to extract insight
 
 The tourism industry has always been heavily connected to customer satisfaction. With the rise of online platforms such as Airbnb, the volume of guest reviews has increased exponentially. Considering that manually analyzing this vast amount of data can be time-consuming and error prone, there is a growing need for automated tools and techniques that allow the extraction of valuable insights from this data.
 Sentiment analysis is a powerful tool for analyzing customer feedback and sentiment in the tourism industry, using NLP and machine learning techniques, sentiment analysis can automatically classify guest reviews as positive, negative, or neutral, and extract valuable insights into customer satisfaction and preferences. We will then use the insights gained from the sentiment analysis to identify trends, patterns, and opportunities, which can be valuable for improving customer satisfaction.
+
+**References**
+
+E. Cambria and B. White, "Jumping NLP Curves: A Review of Natural Language Processing Research [Review Article]," in IEEE Computational Intelligence Magazine, vol. 9, no. 2, pp. 48-57, May 2014, doi: 10.1109/MCI.2014.2307227. Retrieved from: https://ieeexplore.ieee.org/abstract/document/6786458
+Liddy, E.D. 2001. Natural Language Processing. In Encyclope-dia of Library and Information Science, 2nd Ed. NY. Marcel Decker, Inc. Retrieved from:	https://surface.syr.edu/cgi/viewcontent.cgi?article=1043&context=istpub
+Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Lan-guage Processing with Python. O'Reilly Media Inc. Retrieved from: https://www.nltk.org/
