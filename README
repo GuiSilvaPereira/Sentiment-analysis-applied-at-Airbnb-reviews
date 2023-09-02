@@ -1,0 +1,204 @@
+<h1 align="center"> Sentiment analysis applied at Airbnb reviews </h1>
+
+<p align="center">
+  <sub> This project was developed during the course Data Mining II from Data Analytics' Master at University of Porto, we applied NLP techniques using Python and Jupyter notebooks in order to extract valuables insights from exploring unstructured text data of Airbnb's accommodation reviews.
+  <sub>
+</p>
+
+<p align="center">
+  <a href="#Introduction"> 🧩 Introduction </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Resultados"> 🚀 Resultados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Dependências"> 🧪 Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Ideias">💡 Possíveis Melhorias </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Creditos"> 🏆 Créditos </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<br/>
+
+<a id="Introduction"></a>
+## 🧩 Introduction 
+
+  ⠀⠀⠀⠀Natural language processing (NLP) is a theory-motivated range of computational techniques for the automatic analysis and representation of human language.” Cambria (2014). In other words, NLP is a way that machines and computers under-stand our language. In this context, the project explore a case study about Text Mining, a very powerful technique to evaluate large collections of documents and discover new information and answer questions. However, the most of this text data is unstructured and produced for human consumption which requires pre-processing techniques to make the data understandable to the machines. 
+    In the scope of this project, sentiment analysis was done, using the NLTK (Natural Language Toolkit) package from Python which provides a wide range of libraries for text analysis, it is widely used, well-documented and has a large community of users and contributors. NLTK includes pre-trained models for sentiment analysis, which was used to classify the sentiment of Airbnb reviews (a piece of text) as positive, negative, or neutral. The data used was collected from insideairbnb.com which is a project that provides data about Airbnb services along the world. Within the data available on the site, we chose to analyze the data concerning the guest reviews and the data about the accommodation’s characteristics. The goal of this project is to demonstrate with real data the challenges of transforming a business problem into a data problem, through a huge quantity of data available from guest reviews for Airbnb accommodations at the Boston City between 2015 and 2023. Leading to how text mining and sentiment analysis can be used to extract insights from a large volume of unstructured data, and how it can help businesses make data-driven decisions that improve customer satisfaction.
+
+<br/>
+
+<a id="Resultados"></a>
+## 🚀 Resultados 
+  > Todos os resultados foram alcançados com sucesso. De modo geral são esses os resultados de cada requisição. 
+
+<br/> 
+  
+### 🎯 PEGAR TODOS OS PRODUTOS CADASTRADO NO BANCO DE DADOS.
+  
+### ```GET``` 
+```URL
+ http://localhost:3003/products
+```
+  
+```JSON
+  {
+    "id": "e5a9a1af-c23e-4e10-98fd-ae914f7f6424",
+    "name": "macbook",
+    "category": "laptop",
+    "status": "ACTIVE",
+    "quantity": 10,
+    "created_at": 0,
+    "updated_at": 0,
+    "deleted_at": 0
+  }
+```
+  
+<br /> 
+  
+### 🎯  CRIAR UM PRODUTO ATRAVEZ DO NOME, CATEGORIA E QUANTIDADE.
+  
+### ```POST```  
+  
+```URL
+  http://localhost:3003/products/cadastro
+```
+  
+```JSON
+{
+  "name": "macbook",
+  "category": "laptop",
+  "quantity": 10
+}
+```
+
+<br /> 
+  
+### 🎯  MUDA O VALOR OU O NOME DE ALGUM PRODUTO ATRÁVES DA URL 
+  
+### ```PUT```  
+  
+```URL
+  http://localhost:3003/products/:idProduto/category/video-game
+```
+  
+```JSON
+{
+  "message": "Um produto da tabela = category, foi mudado  para o valor = video-game com sucesso"
+}
+```
+
+<br/> 
+  
+### 🎯  DELETA O O PRODUTO ATRÁVES DA URL 
+  
+### ```DELETE```  
+  
+```URL
+ http://localhost:3003/products/:idProduto
+```
+  
+```JSON
+{
+  "message": "O produto com id = bc3ad746-67be-4216-831d-eb8087306592 foi deletado."
+}
+```
+
+
+<br/>
+
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<br /> 
+
+<a id="Dependências"></a>
+## 🧪 Dependências
+> Requisitos para rotar o codigo...
+  
+<br /> 
+
+
+## `📖 Instalação` 
+
+
+<br /> 
+
+> Caso tenha Git basta da git clone, caso não tenha basta clicar em code e depois dowloand zip e seguir os proximos passos
+
+```BASH
+git clone https://github.com/MayconCoutinho/CRUD
+```
+
+<br /> 
+
+> Caso já tenha o Node em sua maquina basta instalar o projeto com npm i
+
+```BASH
+npm i 
+```
+<br /> 
+
+## `📖 Dependencies` 
+
+```JSON
+  "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "knex": "^2.4.0",
+        "mysql": "^2.18.1",
+        "uuid": "^9.0.0"
+      }
+
+```
+
+<br /> 
+
+## `📖 devDependencies` 
+
+
+```JSON
+      "devDependencies": {
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.15",
+        "@types/knex": "^0.16.1",
+        "@types/node": "^18.11.18",
+        "@types/uuid": "^9.0.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^4.9.4"
+      }
+
+```
+
+
+
+<br /> 
+
+<a id="Ideias"></a>
+## 💡 Possíveis Melhoras
+> Possíveis melhorias no código e no projeto, caso queira voltar e melhorá lo.
+
+<br /> 
+
+- [ ] ***- Testa todo o código.*** 
+- [ ] ***- Criar token de confirmação para cada requisição.***
+- [ ] ***- Na parte do deletar produto, além de deletar o produto, criar um log de qual produto foi deletado e quando.***
+- [ ] ***- Quando deletar o produto, deixar ele fora do ar, no entando deixar ele em um backap que só vai ser deletado depois de alguns meses ou dias.***
+
+
+<br/>
+
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<br /> 
+
+<a id="Creditos"></a>
+## 🏆 Créditos
+
+<br /> 
+
+<div > 
+
+| [<img src="https://user-images.githubusercontent.com/60453269/217899761-dc2d4e4b-3336-419d-9076-79304290aa0a.png" width=300><br><sub> Maycon Coutinho </sub>](https://www.linkedin.com/in/maycon-coutinho/) | ***Hello 😃 Se você chegou até aqui, acredito que gostou do meu projeto, nesse caso temos algo em comum, sendo assim que tal conversamos um pouco? Meu chama no linkedin 😁*** | 
+|---|---|
+
+
+</div> 
+
+<br /> 
+
